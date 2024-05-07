@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>blogs</h1>
+    {% for blog in all_posts_list %}
+        <div class="post_entry">
+            <h2><a href="{% url 'post_details' blog.pk %}">{{ blog.title}}</a></h2>
+            <p>{{blog.body}}</p>
+        </div>
+    {% endfor %}
+    
+{% endblock content %}
