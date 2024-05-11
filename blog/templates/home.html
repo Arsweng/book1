@@ -2,7 +2,18 @@
 
 {% block content %}
     <h1>blogs</h1>
+    {% if request.user.is_authenticated %}
+        <p>hello {{request.user}}</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button>logout</button>
+        </form>
+    {% else %}
+        <p>hello</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
     {% for blog in all_posts_list %}
+
         <div class="post_entry">
             <h2><a href="{% url 'post_details' blog.pk %}">{{ blog.title}}</a></h2>
             <p>{{blog.body}}</p>
