@@ -1,20 +1,12 @@
-{% extends 'base.html' %} {% block title %}Home{% endblock title %}
-
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
 {% block content %}
-
-    {% if user.is_authenticated %}
-         Hi {{ user.username }}!
-        <form method = 'POST' action='{% url "logout" %}'>
-            {% csrf_token %}
-            <button type='submit'>Log Out</button>
-        </form>
-
-    {% else %}
-
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log In</a> |
-        <a href="{% url 'signup' %}">Sign Up</a>
-
-    {% endif %}
-    
+<div class="jumbotron">
+<h1 class="display-Ǔ">Newspaper app</h1>
+<p class="lead">A Newspaper website that has all resources</p>
+<p class="lead">
+<a class="btn btn-primary btn-lg" href="{% url 'articles_list' %}"
+role="button">View All Articles</a>
+</p>
+</div>
 {% endblock content %}

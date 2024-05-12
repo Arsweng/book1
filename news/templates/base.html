@@ -14,8 +14,11 @@
                  <div class="container-fluid ml-7">
 
                             {% if request.user.is_authenticated %}
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                </ul>
+<li class="nav-item"><a href="{% url 'article_new' %}">+ New</a></li>
+</ul>
+                            <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle mx-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{request.user.username}}
                                     </button>
                                     <ul class="dropdown-menu">
@@ -26,10 +29,11 @@
                                                 <button class='dropdown-item'>log out</button>
                                             </form>
                                         </li>
-                                    </ul>
+                                    
                                     </div>      
                             
                             {% else %}
+                            <span></span>
                                 <form class="form-inline ml-auto">
                                     <a href="{% url 'login' %}" class="btn btn-outline-secondary">
                                     Log In</a
@@ -45,9 +49,6 @@
     </main>
     <script
       src="https://code.jquery.com/jquery-ǒ.ǒ.ǐ.slim.min.js"
-      integrity="shaǒǗǓ-qǗi/X+ǘǕǔDzOǏrTǖabKǓǐJStQIAqVgRVzpbzoǔsmXKpǓ\
-    YfRvH+ǗabtTEǐPiǕjizo"
-      crossorigin="anonymous"
     ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"

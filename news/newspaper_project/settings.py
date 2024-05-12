@@ -25,6 +25,15 @@ SECRET_KEY = 'django-insecure-(i)ci%omd_hxbrn2+&&3+jii5vg_yw(8e@t+ul$&2w%6ylsbk=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#email things
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+MAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 25
+
 ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'home'
@@ -32,6 +41,8 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'pages',
+    'articles'
 ]
 
 MIDDLEWARE = [
@@ -111,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Cairo'
 
 USE_I18N = True
 
@@ -129,3 +141,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL ='users.CustomUser'
+
+
