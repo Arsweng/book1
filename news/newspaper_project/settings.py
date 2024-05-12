@@ -26,13 +26,8 @@ SECRET_KEY = 'django-insecure-(i)ci%omd_hxbrn2+&&3+jii5vg_yw(8e@t+ul$&2w%6ylsbk=
 DEBUG = True
 
 #email things
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-MAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 25
 
 ALLOWED_HOSTS = []
 
